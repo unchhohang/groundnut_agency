@@ -30,19 +30,20 @@ export default function RootLayout({
 
   console.log('satoshi:: ');
   console.log(satoshi.variable);
-  
-  
+
+
   return (
     <html lang="en">
       <body
-        className={satoshi.className}
+        className={`${satoshi.className} lg:mx-80 md:mx-60 `}
       >
 
-        <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+        <main className=" min-h-screen w-full  items-center justify-between py-20 
+        bg-black sm:items-start">
 
           {children}
         </main>
-        <footer>
+        <footer className="hidden md:flex flex-col bg-black">
           <video width="320" height="240" controls preload="none">
             <source src="/assets/footer_bg_video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
