@@ -10,10 +10,10 @@ import catAnima from "@compo/lottie/catAnim.json";
 import LottieIcon from "@compo/lottie/LottieIcon";
 import { PhoneIcon } from "@phosphor-icons/react";
 import Nav from "@compo/Nav";
+import { processPoints } from "@/app/contents";
 
 
 export default function Home() {
-  const logosAnimate = [1, 2, 3, 4, 5, 6];
 
   return (
     <div className="min-h-screen justify-center font-sans dark:bg-black
@@ -31,7 +31,7 @@ export default function Home() {
       </div>
 
       <div className="relative">
-        <video className="w-full h-auto " controls preload="none" autoPlay loop muted>
+        <video className="w-full h-auto " preload="none" autoPlay loop muted>
           <source src="/assets/bgVideo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -43,7 +43,7 @@ export default function Home() {
       <div className="m-5">
         <div className="text-center">Our clients:</div>
         <div className=" overflow-hidden w-full  flex justify-center my-2">
-          <Image src={'/assets/testi/ST_logo.jpg'} width={100} height={100} />
+          <Image src={'/assets/testi/ST_logo.jpg'} width={100} height={100} alt="Sacred Treaks logo" />
 
           {/* 
             <div className="flex  gap-1  animate-scroll ">
@@ -61,56 +61,67 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
+      <div className="m-5 my-10 relative bg-secondary rounded-xl">
+        <div className="">
+          <Image src={'/assets/testi/Rishav.jpeg'}
+            className=" mask-b-from-27%  mask-b-to-89%  w-full h-auto rounded-xl"
+            width={'1000'}
+            height={'800'}
+            alt="Sacred Treaks testomonial" />
+        </div>
+        <div className="relative bottom-30 ">
+          <div className="flex flex-col gap-4 p-5">
+            <div className="flex">
+              <StarIcon weight="fill" color="#ffffff" />
+              <StarIcon weight="fill" color="#ffffff" />
+              <StarIcon weight="fill" color="#ffffff" />
+              <StarIcon weight="fill" color="#ffffff" />
+              <StarIcon weight="fill" color="#ffffff" />
+            </div>
+            <div className="">
+              Working with Groundnut Agency was a breath of fresh air. We’ve worked with designers who don't understand code and developers who don't 'get' design, but Groundnut bridges that gap perfectly. They took our rough concept and turned it into a high-performance site that looks stunning and functions flawlessly. The transition from our initial Figma sketches to the live site was seamless. Truly a top-tier partner for any business looking to level up their digital presence
+            </div>
+            <div>
+              <div className="text-white font-medium">Rishav Acharya</div>
+              <div>CEO of SacredTreaks</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="process-section rounded-4xl bg-secondary m-5 inset-shadow-top flex flex-col items-center
+         px-5   ">
+        <div className="rounded-full border border-solid border-gray-50/10 text-white text-body-xxs
+              font-medium p-1 px-3 mt-10 m-2">Process</div>
+        <div className=" text-white text-4xl font-medium text-center tracking-tight">Your designs,</div>
+        <div className="font-instru italic text-white text-4xl font-medium text-center tracking-tight">effortlessly.</div>
+        <div className="text-center my-3">Begin your design journey in three effortless steps</div>
+        <div className="flex flex-col items-center gap-2">
+          {
+            processPoints.map((_, i) =>
+              <div key={i} className="flex flex-col items-center">
+                <LottieIcon animationData={catAnima} loop={true} />
+                <div className="text-2xl  font-medium tracking-tight text-white px-10 text-center">{_.head}</div>
+                <div className="text-center text-sm px-10 mt-1">{_.body}</div>
+              </div>)
+          }
+        </div>
+        <div className="my-10 mb-15">
+          <CTABtn text="Book a 15-min call" />
+        </div>
+      </div>
+
+      <div className="carousal-products ">
+        <div className="flex p-2 gap-2">
+          <Image src={'/assets/moving1/pic1.jpeg'} width={800} height={800} alt="moving pic 1"
+          className="shrink-0"
+          style={{borderRadius: '24px'}}
+          />
+          <Image src={'/assets/moving1/pic2.jpeg'} width={300} height={300} alt="moving pic 1" className="shrink-0"/>
+          <Image src={'/assets/moving1/pic3.jpeg'} width={300} height={300} alt="moving pic 1" className="shrink-0"/>
+          <Image src={'/assets/moving1/pic4.jpeg'} width={300} height={300} alt="moving pic 1" className="shrink-0"/>
+        </div>
         <div className="flex">
-          <StarIcon weight="fill" />
-          <StarIcon weight="fill" />
-          <StarIcon weight="fill" />
-          <StarIcon weight="fill" />
-          <StarIcon weight="fill" />
-        </div>
-        <div>
-          Working with Groundnut Agency was a breath of fresh air. We’ve worked with designers who don't understand code and developers who don't 'get' design, but Groundnut bridges that gap perfectly. They took our rough concept and turned it into a high-performance site that looks stunning and functions flawlessly. The transition from our initial Figma sketches to the live site was seamless. Truly a top-tier partner for any business looking to level up their digital presence
-        </div>
-        <div>
-          <div>Rishav Acharya</div>
-          <div>CEO of SacredTreaks</div>
-        </div>
-        <Image src={'/assets/testi/Rishav.jpeg'} alt="Testomnial Rishav Picture" width={200} height={200} className="h-auto" />
-      </div>
-
-      <div>
-        <div>Process</div>
-        <div>Your design, effortlessly</div>
-        <div>Begin your design journey in three effortless steps</div>
-        <div className="">
-          <div>
-            <LottieIcon animationData={catAnima} loop={true} />
-            <div>Discovery and Strategy</div>
-            <div>We align on strategy before moving a single pixel, ensuring your design is a high-converting business tool</div>
-          </div>
-          <div>
-            <LottieIcon animationData={catAnima} loop={true} />
-            <div>Collaborative Design</div>
-            <div>Experience your site through high-fidelity prototypes that prioritize seamless UI and intuitive user journeys</div>
-          </div>
-          <div>
-            <LottieIcon animationData={catAnima} loop={true} />
-            <div>Development and Launch</div>
-            <div>We turn designs into fast, SEO-optimized websites using modern frameworks, ensuring a seamless launch after rigorous testing.</div>
-          </div>
-        </div>
-        <CTABtn text="Book a 15-min call" />
-      </div>
-
-      <div>
-        <div className="">
-          <Image src={'/assets/moving1/pic1.jpeg'} width={500} height={400} alt="moving pic 1" />
-          <Image src={'/assets/moving1/pic2.jpeg'} width={500} height={400} alt="moving pic 1" />
-          <Image src={'/assets/moving1/pic3.jpeg'} width={500} height={400} alt="moving pic 1" />
-          <Image src={'/assets/moving1/pic4.jpeg'} width={500} height={400} alt="moving pic 1" />
-        </div>
-        <div className="">
           <Image src={'/assets/moving2/pic1.jpeg'} width={500} height={400} alt="moving pic 1" />
           <Image src={'/assets/moving2/pic2.jpeg'} width={500} height={400} alt="moving pic 1" />
           <Image src={'/assets/moving2/pic3.jpeg'} width={500} height={400} alt="moving pic 1" />

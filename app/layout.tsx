@@ -1,21 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import CTABtn from "@compo/CTA.btn";
-import localFont from "next/font/local";
-
-const satoshi = localFont({
-  src: [
-    {
-      path: '../public/fonts/satoshi/Satoshi-Variable.woff2',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/satoshi/Satoshi-VariableItalic.woff2',
-      style: 'italic',
-    }
-  ],
-  variable: '--font-satoshi'
-});
+import { satoshi, instru } from "./fonts"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,14 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  console.log('satoshi:: ');
-  console.log(satoshi.variable);
 
 
   return (
     <html lang="en">
       <body
-        className={`${satoshi.className} lg:mx-80 md:mx-60 `}
+        className={`${satoshi.variable} ${instru.variable} lg:mx-80 md:mx-60 `}
       >
 
         <main className=" min-h-screen w-full  items-center justify-between py-20 
