@@ -10,7 +10,7 @@ import catAnima from "@compo/lottie/catAnim.json";
 import LottieIcon from "@compo/lottie/LottieIcon";
 import { PhoneIcon } from "@phosphor-icons/react";
 import Nav from "@compo/Nav";
-import { processPoints } from "@/app/contents";
+import { processPoints, skewTicker1, skewTicker2 } from "@/app/contents";
 
 
 export default function Home() {
@@ -46,7 +46,7 @@ export default function Home() {
           <Image src={'/assets/testi/ST_logo.jpg'} width={100} height={100} alt="Sacred Treaks logo" />
 
           {/* 
-            <div className="flex  gap-1  animate-scroll ">
+            <div className="flex  gap-1  animate-scroll-left ">
 
             {
               logosAnimate.map((_, i) => <Image src={'/assets/loqo_logo_bg_rm.jpeg'} width={600} height={600}/>) 
@@ -111,21 +111,51 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="carousal-products ">
-        <div className="flex p-2 gap-2">
-          <Image src={'/assets/moving1/pic1.jpeg'} width={800} height={800} alt="moving pic 1"
-          className="shrink-0"
-          style={{borderRadius: '24px'}}
-          />
-          <Image src={'/assets/moving1/pic2.jpeg'} width={300} height={300} alt="moving pic 1" className="shrink-0"/>
-          <Image src={'/assets/moving1/pic3.jpeg'} width={300} height={300} alt="moving pic 1" className="shrink-0"/>
-          <Image src={'/assets/moving1/pic4.jpeg'} width={300} height={300} alt="moving pic 1" className="shrink-0"/>
-        </div>
-        <div className="flex">
-          <Image src={'/assets/moving2/pic1.jpeg'} width={500} height={400} alt="moving pic 1" />
-          <Image src={'/assets/moving2/pic2.jpeg'} width={500} height={400} alt="moving pic 1" />
-          <Image src={'/assets/moving2/pic3.jpeg'} width={500} height={400} alt="moving pic 1" />
-          <Image src={'/assets/moving2/pic4.jpeg'} width={500} height={400} alt="moving pic 1" />
+      <div className="carousal-products flex flex-col gap-8">
+        <div className="[transform:perspective(1200px)_skewX(4deg)_skewY(4deg)]">
+          <div className="w-full  overflow-hidden flex mask-l-from-80% mask-l-to-100%
+          mask-r-from-80% mask-r-to-100%">
+            <div className="flex p-2 gap-2 animate-scroll-left" >
+              {
+                skewTicker1.map((x, i) =>
+                  <Image key={i} src={x} width={300} height={150} alt="moving pic 1"
+                    className="shrink-0 "
+                    style={{ borderRadius: '24px' }}
+                  />)
+              }
+            </div>
+            <div className="flex p-2 gap-2 animate-scroll-left -translate-x-[200%] " >
+              {
+                skewTicker1.map((x, i) =>
+                  <Image key={i} src={x} width={300} height={150} alt="moving pic 1"
+                    className="shrink-0 "
+                    style={{ borderRadius: '24px' }}
+                  />)
+              }
+            </div>
+          </div>
+
+          <div className="w-full overflow-hidden flex mask-l-from-80% mask-l-to-100%
+          mask-r-from-80% mask-r-to-100% " >
+            <div className="flex p-2 gap-2  animate-scroll-right" >
+              {
+                skewTicker2.map((x, i) =>
+                  <Image key={i} src={x} width={300} height={150} alt="moving pic 1"
+                    className="shrink-0 "
+                    style={{ borderRadius: '24px' }}
+                  />)
+              }
+            </div>
+            <div className="flex p-2 gap-2  animate-scroll-right" >
+              {
+                skewTicker2.map((x, i) =>
+                  <Image key={i} src={x} width={300} height={150} alt="moving pic 1"
+                    className="shrink-0 "
+                    style={{ borderRadius: '24px' }}
+                  />)
+              }
+            </div>
+          </div>
         </div>
       </div>
 

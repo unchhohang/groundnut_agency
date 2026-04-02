@@ -20,3 +20,19 @@ export const processPoints: TProcessPoint[] = [
     body: 'We turn designs into fast, SEO-optimized websites using modern frameworks, ensuring a seamless launch after rigorous testing.'
   }
 ]
+
+
+
+export const skewTicker1 = [
+  '/assets/moving1/pic1.jpeg',
+  '/assets/moving1/pic2.jpeg',
+  '/assets/moving1/pic3.jpeg',
+  '/assets/moving1/pic4.jpeg',
+];
+
+export const skewTicker2 = [
+  '/assets/moving2/pic1.jpeg',
+  '/assets/moving2/pic2.jpeg',
+  '/assets/moving2/pic3.jpeg',
+  '/assets/moving2/pic4.jpeg',
+];

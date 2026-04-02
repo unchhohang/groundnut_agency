@@ -41,15 +41,26 @@
   --color-cta: #6214D9;
   --color-secondary: #0A0A0A;
   /* animation */
-  --animate-scroll: scroll 7s linear infinite;
+  --animate-scroll-right: scroll-right 15s linear infinite;
+  --animate-scroll-left: scroll-left 15s linear infinite;
 
-  @keyframes scroll {
+  @keyframes scroll-right {
     from {
       transform: translateX(0);
     }
 
     to {
       transform: translateX(-100%);
+    }
+  }
+
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(100%);
     }
   }
 }
