@@ -6,11 +6,12 @@ import {
   CrownIcon, PulseIcon
 } from "@phosphor-icons/react/ssr";
 import RefreshIcon from "@compo/icons/svgs/RefreshIcon";
-import catAnima from "@compo/lottie/catAnim.json";
 import LottieIcon from "@compo/lottie/LottieIcon";
 import { PhoneIcon } from "@phosphor-icons/react";
 import Nav from "@compo/Nav";
-import { processPoints, skewTicker1, skewTicker2 } from "@/app/contents";
+import { featuresContent, processPoints, skewTicker1, skewTicker2 } from "@/app/contents";
+import { features } from "process";
+import catAnima from "@compo/lottie/catAnim.json";
 
 
 export default function Home() {
@@ -159,75 +160,76 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
-        <div>Why choose Us</div>
-        <div>We speak both design and code</div>
-        <div>We bridge the gap between design and code. By handling both, we eliminate the 'lost in translation' moments that cost time and money, ensuring your pixel-perfect vision performs as beautifully as it looks.</div>
+      <div className="mt-20 mb-10 px-2 flex flex-col items-center">
+        <div className="rounded-full border border-solid border-gray-50/10 text-white text-body-xxs
+              font-medium p-1 px-3 mt-10 m-2">Why choose Us</div>
+        <div className="font-medium text-6xl text-center tracking-tighter leading-20
+        text-white">We speak both <br /> design <br /> and code</div>
+        <div className="text-body-m text-center p-2">We bridge the gap between design and code. By handling both, we eliminate the 'lost in translation' moments that cost time and money, ensuring your pixel-perfect vision performs as beautifully as it looks.</div>
       </div>
 
-      <div>
-        <Image src={'/assets/why_choose_us.jpeg'} width={500} height={500} alt="Why choose us lady picture" />
-        <div className="flex">
-          <StarIcon weight="fill" />
-          <StarIcon weight="fill" />
-          <StarIcon weight="fill" />
-          <StarIcon weight="fill" />
-          <StarIcon weight="fill" />
-        </div>
-        <div>Getting design done was such a pain. I am so glad we found Groundnut agency, the work is incredible and the process is refreshingly painless.</div>
-        <div>Jenny London</div>
-        <div>Founder of Kinect</div>
-
+      <div className="px-2">
         <div>
           <div>
-            <div>The Design-to-Dev Bridge</div>
-            <div>We handle both design and code to eliminate "lost in translation" moments. This ensures your pixel-perfect vision is exactly what we deliver in the final build.</div>
+            <div className="text-2xl  font-medium tracking-tight text-white  text-left">The Design-to-Dev Bridge</div>
+            <div className="text-left text-sm  mt-1">We handle both design and code to eliminate "lost in translation" moments. This ensures your pixel-perfect vision is exactly what we deliver in the final build.</div>
           </div>
           <div>
-            <div>Built for Performance</div>
-            <div>A beautiful site must be fast and easy to find. We prioritize speed and SEO from day one, building high-performance websites that turn visitors into customers.</div>
+            <div className="text-2xl  font-medium tracking-tight text-white  text-left">Built for Performance</div>
+            <div className="text-left text-sm  mt-1">A beautiful site must be fast and easy to find. We prioritize speed and SEO from day one, building high-performance websites that turn visitors into customers.</div>
           </div>
         </div>
         <div>
-          <div>Strategy-Led Results</div>
-          <div>We build what your business needs, not just what you ask for. Every decision is rooted in your goals to ensure your site grows with you.</div>
+          <div className="text-2xl  font-medium tracking-tight text-white  text-left">Strategy-Led Results</div>
+          <div className="text-left text-sm  mt-1">We build what your business needs, not just what you ask for. Every decision is rooted in your goals to ensure your site grows with you.</div>
+        </div>
+
+        <div className="choose-us-testo my-20">
+          <Image src={'/assets/why_choose_us.jpeg'} width={500} height={500} alt="Why choose us lady picture"
+            className="mask-b-from-50% mask-b-to-95%"
+            style={{ borderRadius: '24px' }}
+          />
+          <div className="flex flex-col gap-2 my-1 p-5 pr-10 text-left relative bottom-10">
+            <div className="flex ">
+              <StarIcon weight="fill" color="#ffffff" />
+              <StarIcon weight="fill" color="#ffffff" />
+              <StarIcon weight="fill" color="#ffffff" />
+              <StarIcon weight="fill" color="#ffffff" />
+              <StarIcon weight="fill" color="#ffffff" />
+            </div>
+            <div className="text-body-xxs ">Getting design done was such a pain. I am so glad we found Groundnut agency, the work is incredible and the process is refreshingly painless.</div>
+            <div>
+              <div className="text-white font-medium">Jenny London</div>
+              <div className="text-body-xxs">Founder of Kinect</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div>Features</div>
-      <div>Reasons you will love us.</div>
-      <div>
-        <div>
-          <LottieIcon animationData={catAnima} loop={true} />
-          <div>Pixel Perfect Design</div>
-          <div>We just don't make design according to your vision we help you to see that vision also</div>
+
+      <div className="process-section rounded-4xl bg-secondary m-5 inset-shadow-top flex flex-col items-center
+         px-5  bg-linear-to-b from-secondary from-50% to-black ">
+        <div className="rounded-full border border-solid border-gray-50/10 text-white text-body-xxs
+              font-medium p-1 px-3 mt-10 m-2">Features</div>
+        <div className=" text-white text-4xl font-medium text-center tracking-tight">
+          Reasons you <br /> will
+          <span className="font-instru italic text-white text-4xl font-medium text-center tracking-tight">&nbsp;love</span>
+          &nbsp;us.
         </div>
-        <div>
-          <LottieIcon animationData={catAnima} loop={true} />
-          <div>High Performance Site</div>
-          <div>High performance site build with  quality code and frame work. With AI augmentation</div>
+        <div className="">
+          {
+            featuresContent.map((_, i) =>
+              <div key={i}>
+                <LottieIcon animationData={_.lottieUrl} loop={true} />
+                <div className="text-2xl  font-medium tracking-tight text-white  text-center">{_.head}</div>
+                <div className="text-center text-sm  mt-1">{_.body}</div>
+              </div>)
+          }
         </div>
-        <div>
-          <LottieIcon animationData={catAnima} loop={true} />
-          <div>Affordable Rate</div>
-          <div>Premium design and development services tailored to fit your business budget.</div>
+
+        <div className="m-10 my-20">
+          <CTABtn text="Book a 15-min call" />
         </div>
-        <div>
-          <LottieIcon animationData={catAnima} loop={true} />
-          <div>SEO Optimization</div>
-          <div>Built from the ground up to rank higher and get your brand discovered</div>
-        </div>
-        <div>
-          <LottieIcon animationData={catAnima} loop={true} />
-          <div>Client based features</div>
-          <div>Custom functionality built specifically to solve your unique business challenges</div>
-        </div>
-        <div>
-          <LottieIcon animationData={catAnima} loop={true} />
-          <div>Secure site</div>
-          <div>Industry-standard security protocols to keep your data and your users safe</div>
-        </div>
-        <CTABtn text="Book a 15-min call" />
       </div>
 
       <div>

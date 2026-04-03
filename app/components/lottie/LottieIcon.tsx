@@ -9,7 +9,7 @@ interface Props {
   loop?: boolean
 }
 
-export default function LottieIcon({ animationData, size = 400, loop = true }: Props) {
+export default function LottieIcon({ animationData, size = 200, loop = true }: Props) {
   return (
     <Lottie
       animationData={animationData}

@@ -1,5 +1,7 @@
 // File for saving contents to use late for render
 
+import catAnima from "@compo/lottie/catAnim.json";
+
 type TProcessPoint = { url: string, head: string, body: string }
 
 export const logosAnimate = [1, 2, 3, 4, 5, 6];
@@ -36,3 +38,36 @@ export const skewTicker2 = [
   '/assets/moving2/pic3.jpeg',
   '/assets/moving2/pic4.jpeg',
 ];
+
+export const featuresContent = [
+  {
+    lottieUrl:  catAnima,
+    head: "Pixel Perfect Design",
+    body: "We just don't make design according to your vision we help you to see that vision also"
+  },
+  {
+    lottieUrl:  catAnima,
+    head: " High Performance Site",
+    body: "High performance site build with  quality code and frame work. With AI augmentation"
+  },
+  {
+    lottieUrl:  catAnima,
+    head: "Affordable Rate",
+    body: "Premium design and development services tailored to fit your business budget."
+  },
+  {
+    lottieUrl:  catAnima,
+    head: "SEO Optimization",
+    body: "Built from the ground up to rank higher and get your brand discovered"
+  },
+  {
+    lottieUrl:  catAnima,
+    head: "Client based features",
+    body: "Custom functionality built specifically to solve your unique business challenges"
+  },
+  {
+    lottieUrl:  catAnima,
+    head: "Secure site",
+    body: "Industry-standard security protocols to keep your data and your users safe"
+  },
+]
