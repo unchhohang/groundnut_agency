@@ -1,17 +1,14 @@
 import CTABtn from "@compo/CTA.btn";
 import Image from "next/image";
-import {
-  StarIcon, ShoppingBagIcon, LineSegmentIcon, LaptopIcon, DesktopIcon,
-  MagicWandIcon, InstagramLogoIcon, ChartLineIcon, EnvelopeIcon,
-  CrownIcon, PulseIcon
-} from "@phosphor-icons/react/ssr";
 import RefreshIcon from "@compo/icons/svgs/RefreshIcon";
 import LottieIcon from "@compo/lottie/LottieIcon";
 import { PhoneIcon } from "@phosphor-icons/react";
 import Nav from "@compo/Nav";
-import { featuresContent, processPoints, skewTicker1, skewTicker2 } from "@/app/contents";
+import { faqs, featuresContent, processPoints, skewTicker1, skewTicker2, toolsTicker1, toolsTicker2 } from "@/app/contents";
 import { features } from "process";
 import catAnima from "@compo/lottie/catAnim.json";
+import { StarIcon } from "@phosphor-icons/react/dist/ssr";
+import Accordion from "@compo/Accordion";
 
 
 export default function Home() {
@@ -232,72 +229,81 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
-        <div>Tools</div>
-        <div>All your Project needs.</div>
-        <div>We use various tools to make your Project to top quality</div>
-        <div>
-          <div className="">
-            <div className="flex"><ShoppingBagIcon /> Web App</div>
-            <div className="flex"><LineSegmentIcon /> Design</div>
-            <div className="flex"><LaptopIcon /> Websites</div>
-            <div className="flex"><DesktopIcon /> Landing Pages</div>
-            <div className="flex"><MagicWandIcon /> Logos</div>
+      <div className="flex flex-col items-center"
+      >
+        <div className="rounded-full border border-solid border-gray-50/10 text-white text-body-xxs
+              font-medium p-1 px-3 mt-10 m-2">Tools</div>
+        <div className="px-15">
+          <div className=" text-white text-4xl font-medium text-center tracking-tight">
+            <div >All your</div>
+            <div>
+              <span className="font-instru italic text-white text-4xl font-medium text-center tracking-tight">
+                Project &nbsp;
+              </span>
+              needs.
+            </div>
           </div>
-          <div className="">
-            <div className="flex"><InstagramLogoIcon /> SEO</div>
-            <div className="flex"><ChartLineIcon /> Web Optimization</div>
-            <div className="flex"><EnvelopeIcon /> NextJs</div>
-            <div className="flex"><CrownIcon /> NodeJs</div>
-            <div className="flex"><PulseIcon /> NextJs</div>
+          <div className="text-center m-5">We use various tools to make your Project to top quality</div>
+        </div>
+      </div>
+      <div className=" w-full mask-l-from-80% mask-l-to-95% mask-r-from-80% mask-r-to-95%">
+        <div className="my-5 flex overflow-hidden">
+          <div className=" flex animate-scroll-tools-right pr-2 gap-2">
+            {
+              toolsTicker1.map((_, i) =>
+                <div key={i} className="flex items-center gap-1 p-2 px-4 shrink-0  bg-secondary rounded-2xl  inset-shadow-top pr-1">
+                  <div className="">{_.icon}</div>
+                  <div className="font-medium text-body-m text-white tracking-wide">{_.name}</div>
+                </div>)
+            }
           </div>
+
+          <div className=" flex  animate-scroll-tools-right pr-2 gap-2">
+            {
+              toolsTicker1.map((_, i) =>
+                <div key={i} className="flex items-center gap-1 p-2 px-4 shrink-0  bg-secondary rounded-2xl  inset-shadow-top pr-1">
+                  <div className="">{_.icon}</div>
+                  <div className="font-medium text-body-m text-white tracking-wide">{_.name}</div>
+                </div>)
+            }
+          </div>
+        </div>
+
+        <div className=" flex overflow-hidden">
+          <div className=" flex animate-scroll-tools-left pr-2 gap-2">
+            {
+              toolsTicker2.map((_, i) =>
+                <div key={i} className="flex items-center gap-1 p-2 px-4 shrink-0  bg-secondary rounded-2xl  inset-shadow-top pr-1">
+                  <div className="">{_.icon}</div>
+                  <div className="font-medium text-body-m text-white tracking-wide">{_.name}</div>
+                </div>)
+            }
+          </div>
+
+          <div className=" flex  animate-scroll-tools-left pr-2 gap-2 -translate-x-[200%]" >
+            {
+              toolsTicker2.map((_, i) =>
+                <div key={i} className="flex items-center gap-1 p-2 px-4 shrink-0  bg-secondary rounded-2xl  inset-shadow-top pr-1">
+                  <div className="">{_.icon}</div>
+                  <div className="font-medium text-body-m text-white tracking-wide">{_.name}</div>
+                </div>)
+            }
+          </div>
+        </div>
+
+      </div>
+
+      <div className="Pricing-section flex flex-col items-center my-20 p-10">
+        <div className="rounded-full border border-solid border-gray-50/10 text-white text-body-xxs
+              font-medium p-1 px-3 mt-10 m-2">Pricing</div>
+        <div className=" text-white text-5xl font-medium text-center tracking-tight">Pricing that is in your Budget</div>
+        <div className="py-10">
+          <CTABtn text="Book a 15-min call" textSize="big" />
         </div>
       </div>
 
       <div>
-        <div>Pricing</div>
-        <div>Pricing that is in your Budget</div>
-        <CTABtn text="Book a 15-min call" />
-        <div>Designs trusted by companies like:</div>
-        <div></div>
-        <div className="">
-          <Image src={'/assets/loqo_logo_bg_rm.jpeg'} width={200} height={150} alt="moving logos" />
-          <Image src={'/assets/loqo_logo_bg_rm.jpeg'} width={200} height={150} alt="moving logos" />
-          <Image src={'/assets/loqo_logo_bg_rm.jpeg'} width={200} height={150} alt="moving logos" />
-          <Image src={'/assets/loqo_logo_bg_rm.jpeg'} width={200} height={150} alt="moving logos" />
-          <Image src={'/assets/loqo_logo_bg_rm.jpeg'} width={200} height={150} alt="moving logos" />
-        </div>
-      </div>
-
-      <div>
-        <div>
-          <div>What services does Groundnut Agency provide?</div>
-          <div>We are a "design and build" IT agency. This means we handle the entire lifecycle of your project—from the initial UI/UX design in Figma to the final custom development and launch. Whether you need a high-converting landing page or a complex web application, we provide the strategy, the look, and the code.</div>
-        </div>
-        <div>
-          <div>Who is your typical client?</div>
-          <div>We build for everyone. Our clients range from local small business owners looking for their first professional digital presence to tech startups needing high-performance, scalable web systems. If you have a vision, we have the technical engine to build it.</div>
-        </div>
-        <div>
-          <div>I already have a design. Can you just build it?</div>
-          <div>Absolutely. We often partner with independent designers and marketing firms to act as their dedicated development team. We specialize in turning static designs into pixel-perfect, responsive, and lightning-fast websites.</div>
-        </div>
-        <div>
-          <div>How long does a typical project take?</div>
-          <div>Landing Pages: 1–2 weeks.  Standard Business Sites: 3–5 weeks.  Custom Web Apps: 8+ weeks. We provide a clear project roadmap during our kickoff meeting so you always know exactly where we are.</div>
-        </div>
-        <div>
-          <div>
-            What "stack" or technologies do you use?
-          </div>
-          <div>
-            We don't believe in "one size fits all." We choose the best tool for your specific goals—whether that is Next.js and Tailwind CSS for high-performance apps, or platforms like Framer for design-heavy brand sites that need to be launched quickly.
-          </div>
-        </div>
-        <div>
-          <div>How much does a website cost?</div>
-          <div>Because every project is custom, we offer three main engagement tiers: The Starter, The Professional, and The Enterprise. Once we have a 15-minute discovery call to understand your needs, we’ll provide a fixed-price proposal—no hidden hourly surprises.</div>
-        </div>
+        <Accordion faqs={faqs} />
       </div>
     </div >
   );
