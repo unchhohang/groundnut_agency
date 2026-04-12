@@ -9,12 +9,13 @@ interface Props {
   loop?: boolean
 }
 
-export default function LottieIcon({ animationData, size = 200, loop = true }: Props) {
+export default function LottieIcon({ animationData, size = 100, loop = true }: Props) {
   return (
     <Lottie
       animationData={animationData}
       loop={loop}
       style={{ width: size, height: size }}
+      className="invert"
     />
   )
 }

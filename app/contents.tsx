@@ -3,23 +3,32 @@
 import { TFaq } from "@/app/types";
 import catAnima from "@compo/lottie/catAnim.json";
 import { ChartLineIcon, CrownIcon, DesktopIcon, EnvelopeIcon, InstagramLogoIcon, LaptopIcon, LineSegmentsIcon, MagicWandIcon, PulseIcon, ShoppingBagIcon } from "@phosphor-icons/react/dist/ssr";
+import searchLotti from "@compo/lottie/Search.json";
+import electricLotti from "@compo/lottie/Electric.json";
+import thumbsUpLotti from "@compo/lottie/thumbsUp.json";
+import pixelPerfectLotti from "@compo/lottie/pixelPerfect.json";
+import performanceLotti from "@compo/lottie/performance.json";
+import affordableLotti from "@compo/lottie/affordable.json";
+import seoLotti from "@compo/lottie/seo.json";
+import clientBasedLotti from "@compo/lottie/clientBased.json";
+import securityLotti from "@compo/lottie/security.json";
 
-type TProcessPoint = { url: string, head: string, body: string }
+type TProcessPoint = { url: object, head: string, body: string }
 
 export const logosAnimate = [1, 2, 3, 4, 5, 6];
 export const processPoints: TProcessPoint[] = [
   {
-    url: '',
+    url: searchLotti,
     head: 'Discovery and Strategy',
     body: 'We align on strategy before moving a single pixel, ensuring your design is a high-converting business tool'
   },
   {
-    url: '',
+    url: electricLotti,
     head: 'Collaborative Design',
     body: 'Experience your site through high-fidelity prototypes that prioritize seamless UI and intuitive user journeys'
   },
   {
-    url: '',
+    url: thumbsUpLotti,
     head: 'Development and Launch',
     body: 'We turn designs into fast, SEO-optimized websites using modern frameworks, ensuring a seamless launch after rigorous testing.'
   }
@@ -43,32 +52,32 @@ export const skewTicker2 = [
 
 export const featuresContent = [
   {
-    lottieUrl: catAnima,
+    lottieUrl: pixelPerfectLotti,
     head: "Pixel Perfect Design",
     body: "We just don't make design according to your vision we help you to see that vision also"
   },
   {
-    lottieUrl: catAnima,
+    lottieUrl: performanceLotti,
     head: " High Performance Site",
     body: "High performance site build with  quality code and frame work. With AI augmentation"
   },
   {
-    lottieUrl: catAnima,
+    lottieUrl: affordableLotti,
     head: "Affordable Rate",
     body: "Premium design and development services tailored to fit your business budget."
   },
   {
-    lottieUrl: catAnima,
+    lottieUrl: seoLotti,
     head: "SEO Optimization",
     body: "Built from the ground up to rank higher and get your brand discovered"
   },
   {
-    lottieUrl: catAnima,
+    lottieUrl: clientBasedLotti,
     head: "Client based features",
     body: "Custom functionality built specifically to solve your unique business challenges"
   },
   {
-    lottieUrl: catAnima,
+    lottieUrl: securityLotti,
     head: "Secure site",
     body: "Industry-standard security protocols to keep your data and your users safe"
   },

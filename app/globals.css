@@ -48,6 +48,8 @@
   --animate-scroll-tools-right: scroll-right 20s linear infinite;
   --animate-scroll-tools-left: scroll-left 20s linear infinite;
 
+  --breakpoint-tablet: 38rem;
+
   @keyframes scroll-right {
     from {
       transform: translateX(0);
@@ -75,6 +77,7 @@
     --foreground: #999999;
   }
 }
+
 
 body {
   background: var(--background);

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import CTABtn from "@compo/CTA.btn";
 import { satoshi, instru } from "./fonts"
+import Nav from "@compo/Nav";
+import NavTabletView from "@compo/NavTabletView";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,25 +19,25 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${satoshi.variable} ${instru.variable} lg:mx-80 md:mx-60 `}
+        className={`${satoshi.variable} ${instru.variable}  `}
       >
 
-        <main className=" min-h-screen w-full  items-center justify-between py-20 
-        bg-black sm:items-start">
+        <main className=" min-h-screen w-full  items-center justify-between   
+        bg-black ">
+
+          <div className="hidden lg:block pb-10 sticky top-0 z-50">
+            <Nav />
+          </div>
+
+          <div className="nav-tablets hidden tablet:block lg:hidden w-full bg-black/80 sticky top-0 z-50">
+            <NavTabletView />
+          </div>
 
           {children}
-        </main>
-        <footer className="hidden md:flex flex-col bg-black">
-          <video width="320" height="240" controls preload="none">
-            <source src="/assets/footer_bg_video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div>Are your ready?</div>
-          <div>This could be start of something big.</div>
-          <CTABtn text="Book a call" />
-        </footer>
+        </main >
+
       </body>
     </html>
   );
