@@ -24,10 +24,11 @@ export default function RootLayout({
         className={`${satoshi.variable} ${instru.variable}  `}
       >
 
-        <main className=" min-h-screen w-full  items-center justify-between   
+        <main className=" min-h-screen w-full lg:px-40
+          items-center justify-between   
         bg-black ">
 
-          <div className="hidden lg:block pb-10 sticky top-0 z-50">
+          <div className="hidden lg:block mt-10 pb-10 sticky top-0 z-50">
             <Nav />
           </div>
 

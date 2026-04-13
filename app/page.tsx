@@ -17,8 +17,6 @@ export default function Home() {
   return (
     <div className="min-h-screen  font-sans dark:bg-black  border-b-2xl relative">
 
-
-
       <div className="first-child flex flex-col items-center px-10 gap-5  mb-18 pt-10 tablet:sticky top-5 z-10" >
         <div className=" font-medium text-7xl text-center tracking-tighter leading-20
         text-white">We design your vision and build it to reality</div>
@@ -38,7 +36,11 @@ export default function Home() {
               Your browser does not support the video tag.
             </video>
             <Image src={'/assets/golden_logo_bg_rm.png'} alt="Golden logo " width={200} height={200}
-              className="absolute z-1 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              className="absolute z-1 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:hidden"
+            />
+
+            <Image src={'/assets/golden_logo_bg_rm.png'} alt="Golden logo " width={500} height={500}
+              className="absolute z-1 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-lg:hidden"
             />
           </div>
 
@@ -63,7 +65,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="m-5 my-10 relative bg-secondary rounded-xl">
+          <div className="client-testi-phone m-5 my-10 relative bg-secondary rounded-xl tablet:hidden">
             <div className="">
               <Image src={'/assets/testi/Rishav.jpeg'}
                 className=" mask-b-from-27%  mask-b-to-89%  w-full h-auto rounded-xl"
@@ -91,6 +93,66 @@ export default function Home() {
             </div>
           </div>
 
+          <div className="client-testi-phone m-5 my-10 relative bg-secondary rounded-xl tablet:hidden">
+            <div className="">
+              <Image src={'/assets/testi/Rishav.jpeg'}
+                className=" mask-b-from-27%  mask-b-to-89%  w-full h-auto rounded-xl"
+                width={'1000'}
+                height={'800'}
+                alt="Sacred Treaks testomonial" />
+            </div>
+            <div className="relative bottom-30 ">
+              <div className="flex flex-col gap-4 p-5">
+                <div className="flex">
+                  <StarIcon weight="fill" color="#ffffff" />
+                  <StarIcon weight="fill" color="#ffffff" />
+                  <StarIcon weight="fill" color="#ffffff" />
+                  <StarIcon weight="fill" color="#ffffff" />
+                  <StarIcon weight="fill" color="#ffffff" />
+                </div>
+                <div className="">
+                  Working with Groundnut Agency was a breath of fresh air. We’ve worked with designers who don't understand code and developers who don't 'get' design, but Groundnut bridges that gap perfectly. They took our rough concept and turned it into a high-performance site that looks stunning and functions flawlessly. The transition from our initial Figma sketches to the live site was seamless. Truly a top-tier partner for any business looking to level up their digital presence
+                </div>
+                <div>
+                  <div className="text-white font-medium">Rishav Acharya</div>
+                  <div>CEO of SacredTreaks</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="client-testi relative m-5 my-10 bg-secondary rounded-xl hidden 
+            tablet:flex
+          ">
+            <div className="absolute top-[50%] -translate-y-[50%]">
+              <div className="flex flex-col gap-4 max-w-[60%] p-5 ">
+                <div className="flex">
+                  <StarIcon weight="fill" color="#ffffff" />
+                  <StarIcon weight="fill" color="#ffffff" />
+                  <StarIcon weight="fill" color="#ffffff" />
+                  <StarIcon weight="fill" color="#ffffff" />
+                  <StarIcon weight="fill" color="#ffffff" />
+                </div>
+                <div className="">
+                  Working with Groundnut Agency was a breath of fresh air. We’ve worked with designers who don't understand code and developers who don't 'get' design, but Groundnut bridges that gap perfectly. They took our rough concept and turned it into a high-performance site that looks stunning and functions flawlessly. The transition from our initial Figma sketches to the live site was seamless. Truly a top-tier partner for any business looking to level up their digital presence
+                </div>
+                <div>
+                  <div className="text-white font-medium">Rishav Acharya</div>
+                  <div>CEO of SacredTreaks</div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-1"></div>
+            <div className="flex-1">
+              <Image src={'/assets/testi/Rishav.jpeg'}
+                className=" mask-l-from-20%  mask-l-to-80%  w-full h-auto rounded-xl shrink-0"
+                width={500}
+                height={500}
+                alt="Sacred Treaks testomonial" />
+            </div>
+          </div>
+
+
           <div className="process-section rounded-4xl bg-secondary m-5 inset-shadow-top flex flex-col items-center
          px-5   ">
             <div className="rounded-full border border-solid border-gray-50/10 text-white text-body-xxs
@@ -98,7 +160,7 @@ export default function Home() {
             <div className=" text-white text-4xl font-medium text-center tracking-tight">Your designs,</div>
             <div className="font-instru italic text-white text-4xl font-medium text-center tracking-tight">effortlessly.</div>
             <div className="text-center my-3">Begin your design journey in three effortless steps</div>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2 lg:flex-row">
               {
                 processPoints.map((_, i) =>
                   <div key={i} className="flex flex-col items-center ">
@@ -106,7 +168,7 @@ export default function Home() {
                       <LottieIcon animationData={_.url} loop={true} />
                     </div>
                     <div className="text-2xl  font-medium tracking-tight text-white px-10 text-center">{_.head}</div>
-                    <div className="text-center text-sm px-10 mt-1">{_.body}</div>
+                    <div className="text-center text-sm  mt-1 max-w-[50%] lg:max-w-[100%]">{_.body}</div>
                   </div>)
               }
             </div>
@@ -166,25 +228,40 @@ export default function Home() {
           <div className="mt-20 mb-10 px-2 flex flex-col items-center">
             <div className="rounded-full border border-solid border-gray-50/10 text-white text-body-xxs
               font-medium p-1 px-3 mt-10 m-2">Why choose Us</div>
-            <div className="font-medium text-6xl text-center tracking-tighter leading-20
-        text-white">We speak both <br /> design <br /> and code</div>
+            <div className="lg:hidden font-medium text-6xl text-center tracking-tighter leading-20
+        text-white">We speak both <br /> design <br /> and code
+            </div>
+            <div className="lg-view max-lg:hidden font-medium text-6xl text-center tracking-tighter leading-20
+        text-white">
+              We speak both design and code
+            </div>
             <div className="text-body-m text-center p-2">We bridge the gap between design and code. By handling both, we eliminate the 'lost in translation' moments that cost time and money, ensuring your pixel-perfect vision performs as beautifully as it looks.</div>
           </div>
 
-          <div className="px-5">
-            <div>
+          <div className="px-5 flex flex-col lg:flex-row-reverse gap-4">
+            <div className="flex flex-col lg:max-w-[40%] gap-4">
               <div>
-                <div className="text-2xl  font-medium tracking-tight text-white  text-left">The Design-to-Dev Bridge</div>
-                <div className="text-left text-sm  mt-1">We handle both design and code to eliminate "lost in translation" moments. This ensures your pixel-perfect vision is exactly what we deliver in the final build.</div>
+                <div className="text-2xl  font-medium tracking-tight text-white  text-left">
+                  The Design-to-Dev Bridge
+                </div>
+                <div className="text-left text-sm  mt-1">
+                  We handle both design and code to eliminate "lost in translation" moments. This ensures your pixel-perfect vision is exactly what we deliver in the final build.
+                </div>
               </div>
               <div>
-                <div className="text-2xl  font-medium tracking-tight text-white  text-left">Built for Performance</div>
-                <div className="text-left text-sm  mt-1">A beautiful site must be fast and easy to find. We prioritize speed and SEO from day one, building high-performance websites that turn visitors into customers.</div>
+                <div className="text-2xl  font-medium tracking-tight text-white  text-left">
+                  Built for Performance
+                </div>
+                <div className="text-left text-sm  mt-1">
+                  A beautiful site must be fast and easy to find. We prioritize speed and SEO from day one, building high-performance websites that turn visitors into customers.
+                </div>
               </div>
-            </div>
-            <div>
-              <div className="text-2xl  font-medium tracking-tight text-white  text-left">Strategy-Led Results</div>
-              <div className="text-left text-sm  mt-1">We build what your business needs, not just what you ask for. Every decision is rooted in your goals to ensure your site grows with you.</div>
+              <div className="text-2xl  font-medium tracking-tight text-white  text-left">
+                Strategy-Led Results
+              </div>
+              <div className="text-left text-sm  mt-1">
+                We build what your business needs, not just what you ask for. Every decision is rooted in your goals to ensure your site grows with you.
+              </div>
             </div>
 
             <div className="choose-us-testo-mobile my-20 tablet:hidden">
@@ -208,23 +285,26 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="choose-us-testo max-tablet:hidden my-20 relative w-full h-100">
-              <div className="absolute  bg-[url(/assets/why_choose_us.jpeg)] bg-contain bg-no-repeat 
-           w-full h-100 mask-l-from-20% mask-l-to-60%
-          "></div>
-              <div className="absolute  flex flex-col gap-2 my-1 p-10 pr-10 text-left 
+            <div className="choose-us-testo max-tablet:hidden  relative w-full h-100 my-10">
+              <div className="relative ">
+                <Image src={'/assets/why_choose_us.jpeg'} width={500} height={500} alt="Why choose us lady picture"
+                  className="mask-l-from-20% mask-l-to-60% "
+                  style={{ borderRadius: '24px' }}
+                />
+                <div className="absolute  flex flex-col gap-2 my-1  pr-10 text-left 
           w-80 p-10 top-[50%] -translate-y-[50%]">
-                <div className="flex ">
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                </div>
-                <div className="text-body-xxs ">Getting design done was such a pain. I am so glad we found Groundnut agency, the work is incredible and the process is refreshingly painless.</div>
-                <div>
-                  <div className="text-white font-medium">Jenny London</div>
-                  <div className="text-body-xxs">Founder of Kinect</div>
+                  <div className="flex ">
+                    <StarIcon weight="fill" color="#ffffff" />
+                    <StarIcon weight="fill" color="#ffffff" />
+                    <StarIcon weight="fill" color="#ffffff" />
+                    <StarIcon weight="fill" color="#ffffff" />
+                    <StarIcon weight="fill" color="#ffffff" />
+                  </div>
+                  <div className="text-body-xxs ">Getting design done was such a pain. I am so glad we found Groundnut agency, the work is incredible and the process is refreshingly painless.</div>
+                  <div>
+                    <div className="text-white font-medium">Jenny London</div>
+                    <div className="text-body-xxs">Founder of Kinect</div>
+                  </div>
                 </div>
               </div>
             </div>
