@@ -10,6 +10,7 @@ import catAnima from "@compo/lottie/catAnim.json";
 import { ListIcon, StarIcon, XIcon } from "@phosphor-icons/react/dist/ssr";
 import Accordion from "@compo/Accordion";
 import NavTabletView from "@compo/NavTabletView";
+import ClientTesti from "@compo/ClientTesti";
 
 
 export default function Home() {
@@ -36,11 +37,11 @@ export default function Home() {
               Your browser does not support the video tag.
             </video>
             <Image src={'/assets/golden_logo_bg_rm.png'} alt="Golden logo " width={200} height={200}
-              className="absolute z-1 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:hidden"
+              className="absolute z-1 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 tablet:hidden"
             />
 
             <Image src={'/assets/golden_logo_bg_rm.png'} alt="Golden logo " width={500} height={500}
-              className="absolute z-1 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-lg:hidden"
+              className="absolute z-1 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-tablet:hidden"
             />
           </div>
 
@@ -65,96 +66,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="client-testi-phone m-5 my-10 relative bg-secondary rounded-xl tablet:hidden">
-            <div className="">
-              <Image src={'/assets/testi/Rishav.jpeg'}
-                className=" mask-b-from-27%  mask-b-to-89%  w-full h-auto rounded-xl"
-                width={'1000'}
-                height={'800'}
-                alt="Sacred Treaks testomonial" />
-            </div>
-            <div className="relative bottom-30 ">
-              <div className="flex flex-col gap-4 p-5">
-                <div className="flex">
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                </div>
-                <div className="">
-                  Working with Groundnut Agency was a breath of fresh air. We’ve worked with designers who don't understand code and developers who don't 'get' design, but Groundnut bridges that gap perfectly. They took our rough concept and turned it into a high-performance site that looks stunning and functions flawlessly. The transition from our initial Figma sketches to the live site was seamless. Truly a top-tier partner for any business looking to level up their digital presence
-                </div>
-                <div>
-                  <div className="text-white font-medium">Rishav Acharya</div>
-                  <div>CEO of SacredTreaks</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="client-testi-phone m-5 my-10 relative bg-secondary rounded-xl tablet:hidden">
-            <div className="">
-              <Image src={'/assets/testi/Rishav.jpeg'}
-                className=" mask-b-from-27%  mask-b-to-89%  w-full h-auto rounded-xl"
-                width={'1000'}
-                height={'800'}
-                alt="Sacred Treaks testomonial" />
-            </div>
-            <div className="relative bottom-30 ">
-              <div className="flex flex-col gap-4 p-5">
-                <div className="flex">
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                </div>
-                <div className="">
-                  Working with Groundnut Agency was a breath of fresh air. We’ve worked with designers who don't understand code and developers who don't 'get' design, but Groundnut bridges that gap perfectly. They took our rough concept and turned it into a high-performance site that looks stunning and functions flawlessly. The transition from our initial Figma sketches to the live site was seamless. Truly a top-tier partner for any business looking to level up their digital presence
-                </div>
-                <div>
-                  <div className="text-white font-medium">Rishav Acharya</div>
-                  <div>CEO of SacredTreaks</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="client-testi relative m-5 my-10 bg-secondary rounded-xl hidden 
-            tablet:flex
-          ">
-            <div className="absolute top-[50%] -translate-y-[50%]">
-              <div className="flex flex-col gap-4 max-w-[60%] p-5 ">
-                <div className="flex">
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                  <StarIcon weight="fill" color="#ffffff" />
-                </div>
-                <div className="">
-                  Working with Groundnut Agency was a breath of fresh air. We’ve worked with designers who don't understand code and developers who don't 'get' design, but Groundnut bridges that gap perfectly. They took our rough concept and turned it into a high-performance site that looks stunning and functions flawlessly. The transition from our initial Figma sketches to the live site was seamless. Truly a top-tier partner for any business looking to level up their digital presence
-                </div>
-                <div>
-                  <div className="text-white font-medium">Rishav Acharya</div>
-                  <div>CEO of SacredTreaks</div>
-                </div>
-              </div>
-            </div>
-            <div className="flex-1"></div>
-            <div className="flex-1">
-              <Image src={'/assets/testi/Rishav.jpeg'}
-                className=" mask-l-from-20%  mask-l-to-80%  w-full h-auto rounded-xl shrink-0"
-                width={500}
-                height={500}
-                alt="Sacred Treaks testomonial" />
-            </div>
-          </div>
+          {<ClientTesti />}
 
 
           <div className="process-section rounded-4xl bg-secondary m-5 inset-shadow-top flex flex-col items-center
-         px-5   ">
+         px-15   ">
             <div className="rounded-full border border-solid border-gray-50/10 text-white text-body-xxs
               font-medium p-1 px-3 mt-10 m-2">Process</div>
             <div className=" text-white text-4xl font-medium text-center tracking-tight">Your designs,</div>
@@ -172,8 +88,11 @@ export default function Home() {
                   </div>)
               }
             </div>
-            <div className="my-10 mb-15">
+            <div className="my-10 mb-15 lg:hidden">
               <CTABtn text="Book a 15-min call" />
+            </div>
+            <div className="my-10 mb-15 max-tablet:hidden">
+              <CTABtn text="Book a 15-min call" textSize="big" />
             </div>
           </div>
 
@@ -239,7 +158,7 @@ export default function Home() {
           </div>
 
           <div className="px-5 flex flex-col lg:flex-row-reverse gap-4">
-            <div className="flex flex-col lg:max-w-[40%] gap-4">
+            <div className="flex flex-col lg:max-w-[40%] gap-8">
               <div>
                 <div className="text-2xl  font-medium tracking-tight text-white  text-left">
                   The Design-to-Dev Bridge
@@ -264,7 +183,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="choose-us-testo-mobile my-20 tablet:hidden">
+            <div className="choose-us-testo-mobile my-10 tablet:hidden">
               <Image src={'/assets/why_choose_us.jpeg'} width={500} height={500} alt="Why choose us lady picture"
                 className="mask-b-from-50% mask-b-to-95% "
                 style={{ borderRadius: '24px' }}
@@ -285,13 +204,15 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="choose-us-testo max-tablet:hidden  relative w-full h-100 my-10">
-              <div className="relative ">
-                <Image src={'/assets/why_choose_us.jpeg'} width={500} height={500} alt="Why choose us lady picture"
-                  className="mask-l-from-20% mask-l-to-60% "
-                  style={{ borderRadius: '24px' }}
-                />
-                <div className="absolute  flex flex-col gap-2 my-1  pr-10 text-left 
+            <div className="choose-us-testo max-tablet:hidden  relative w-full h-100 my-10 flex ">
+              <div className="relative w-full flex">
+                <div className="flex-1">
+                  <Image src={'/assets/why_choose_us.jpeg'} fill alt="Why choose us lady picture"
+                    className="mask-l-from-20% mask-l-to-60% "
+                    style={{ borderRadius: '24px' }}
+                  />
+                </div>
+                <div className="absolute  flex flex-col flex-1 gap-2 my-1  pr-10 text-left 
           w-80 p-10 top-[50%] -translate-y-[50%]">
                   <div className="flex ">
                     <StarIcon weight="fill" color="#ffffff" />
@@ -315,26 +236,34 @@ export default function Home() {
          px-5  bg-linear-to-b from-secondary from-50% to-black " id="features">
             <div className="rounded-full border border-solid border-gray-50/10 text-white text-body-xxs
               font-medium p-1 px-3 mt-10 m-2">Features</div>
-            <div className=" text-white text-4xl font-medium text-center tracking-tight">
+            <div className=" lg:hidden text-white text-4xl font-medium text-center tracking-tight">
               Reasons you <br /> will
               <span className="font-instru italic text-white text-4xl font-medium text-center tracking-tight">&nbsp;love</span>
               &nbsp;us.
             </div>
-            <div className="">
+            <div className=" max-tablet:hidden text-white text-4xl font-medium text-center tracking-tight">
+              Reasons you  will
+              <span className="font-instru italic text-white text-4xl font-medium text-center tracking-tight">&nbsp;love</span>
+              &nbsp;us.
+            </div>
+            <div className="lg:grid lg:grid-cols-3 gap-4 py-5">
               {
                 featuresContent.map((_, i) =>
-                  <div key={i} className="m-5">
-                    <div className="flex justify-center">
+                  <div key={i} className="m-5 flex flex-col items-center">
+                    <div className="">
                       <LottieIcon animationData={_.lottieUrl} loop={true} />
                     </div>
-                    <div className="text-2xl  font-medium tracking-tight text-white  text-center">{_.head}</div>
-                    <div className="text-center text-sm  mt-1">{_.body}</div>
+                    <div className="text-2xl  font-medium tracking-tight text-white  text-center ">{_.head}</div>
+                    <div className="text-center text-sm  mt-1  ">{_.body}</div>
                   </div>)
               }
             </div>
 
-            <div className="m-10 my-20">
+            <div className="m-10 my-20 lg:hidden">
               <CTABtn text="Book a 15-min call" />
+            </div>
+            <div className="m-10 my-20 max-tablet:hidden ">
+              <CTABtn text="Book a 15-min call" textSize="big" />
             </div>
           </div>
 
