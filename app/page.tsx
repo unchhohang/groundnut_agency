@@ -18,6 +18,14 @@ export default function Home() {
   return (
     <div className="min-h-screen  font-sans dark:bg-black  border-b-2xl relative">
 
+          <div className="hidden lg:block mt-10 pb-10 sticky top-0 z-50">
+            <Nav />
+          </div>
+
+          <div className="nav-tablets hidden tablet:block lg:hidden w-full bg-black/80 sticky top-0 z-50">
+            <NavTabletView />
+          </div>
+
       <div className="first-child flex flex-col items-center px-10 gap-5  mb-18 pt-10 tablet:sticky top-5 z-10" >
         <div className=" font-medium text-7xl text-center tracking-tighter leading-20
         text-white">We design your vision and build it to reality</div>

@@ -28,14 +28,6 @@ export default function RootLayout({
           items-center justify-between   
         bg-black ">
 
-          <div className="hidden lg:block mt-10 pb-10 sticky top-0 z-50">
-            <Nav />
-          </div>
-
-          <div className="nav-tablets hidden tablet:block lg:hidden w-full bg-black/80 sticky top-0 z-50">
-            <NavTabletView />
-          </div>
-
           {children}
         </main >
 
