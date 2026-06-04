@@ -1,13 +1,9 @@
 import CTABtn from "@compo/CTA.btn";
 import Image from "next/image";
-import RefreshIcon from "@compo/icons/svgs/RefreshIcon";
 import LottieIcon from "@compo/lottie/LottieIcon";
-import { PhoneIcon } from "@phosphor-icons/react";
 import Nav from "@compo/Nav";
 import { faqs, featuresContent, processPoints, skewTicker1, skewTicker2, toolsTicker1, toolsTicker2 } from "@/app/contents";
-import { features } from "process";
-import catAnima from "@compo/lottie/catAnim.json";
-import { ListIcon, StarIcon, XIcon } from "@phosphor-icons/react/dist/ssr";
+import {  StarIcon } from "@phosphor-icons/react/dist/ssr";
 import Accordion from "@compo/Accordion";
 import NavTabletView from "@compo/NavTabletView";
 import ClientTesti from "@compo/ClientTesti";
